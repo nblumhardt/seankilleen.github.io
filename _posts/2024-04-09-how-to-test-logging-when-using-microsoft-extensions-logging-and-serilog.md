@@ -54,7 +54,7 @@ public class CachedODataServiceTests
         // Creating this builder allows us to add Serilog, which allows us to use Microsoft.Extensions.Logging
         // To get an ILogger<T> and have it use Serilog to write to the in-memory Sink.
         var builder = WebApplication.CreateBuilder([]);
-        builder.Logging.AddSerilog(inMemoryLoggingConfig);
+        builder.Services.AddSerilog(inMemoryLoggingConfig);
         _app = builder.Build();
     }
 
